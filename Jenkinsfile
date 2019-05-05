@@ -1,11 +1,21 @@
 pipeline {
   agent any
   stages {
-    stage('Checkout') {
-      steps {
-        checkout([						$class: 'GitSCM', 						branches: [[name: '*/master']], 						doGenerateSubmoduleConfigurations: false, 						extensions: [], 						submoduleCfg: [], 						userRemoteConfigs: [[credentialsId: 'GitHub_Credentials', url: 'https://github.com/ekoo7/ma-project-2.git']]					])
-      }
-    }
+    stage ('Checkout') {
+			steps {
+				checkout(
+					[
+						$class: 'GitSCM', 
+						branches: [[name: '*/master']], 
+						doGenerateSubmoduleConfigurations: false, 
+						extensions: [], 
+						submoduleCfg: [], 
+						userRemoteConfigs: [[credentialsId: 'GitHub_Credentials', url: 'https://github.com/ekoo7/ma-project-2.git']]
+					]
+				) 	
+			}
+		
+		}
     stage('Code Analyse') {
       steps {
         sh 'echo "Code Analyse durchführen"'
