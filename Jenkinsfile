@@ -45,8 +45,8 @@ pipeline {
                             									patternSeparator: '[, ]+', 
                             									remoteDirectory: '//opt//docker', 
                             									remoteDirectorySDF: false, 
-                            									removePrefix: 'webapp/target', 
-                            									sourceFiles: 'webapp/target/*.war')], 
+                            									removePrefix: 'target', 
+                            									sourceFiles: 'target/*.war')], 
                             							usePromotionTimestamp: false, 
                             							useWorkspaceInPromotion: false, 
                             							verbose: false
